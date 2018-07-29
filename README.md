@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails Appointments API
 
-Things you may want to cover:
+The API allows you to create users, appointments and appointment guests.
 
-* Ruby version
+____
 
-* System dependencies
+### Ruby version
+ruby 2.5.0
 
-* Configuration
+### System dependencies
+`gem`, `bundler`
 
-* Database creation
+### Configuration
+N/A
 
-* Database initialization
+### Database creation
+Uses the native sqlite3 so you can be up and running with no configuration
 
-* How to run the test suite
+### Database initialization
+Database seeding cominig soon!
+
+### How to run the test suite
+The tests are built with RSpec. You can run the tests with the following command:
+
+    bundle exec rspec
 
 * Services (job queues, cache servers, search engines, etc.)
+None
 
 * Deployment instructions
-
-* ...
+Coming soon!
