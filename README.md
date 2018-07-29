@@ -1,6 +1,6 @@
 # Rails Appointments API
 
-The API allows you to create users, appointments and appointment guests.
+The is a sample API that allows you to create users, appointments and appointment guests.
 
 ____
 
@@ -24,8 +24,8 @@ The tests are built with RSpec. You can run the tests with the following command
 
     bundle exec rspec
 
-* Services (job queues, cache servers, search engines, etc.)
+### Services (job queues, cache servers, search engines, etc.)
 None
 
-* Deployment instructions
+### Deployment instructions
 Coming soon!
