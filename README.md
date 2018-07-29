@@ -1,6 +1,8 @@
 # Rails Appointments API
 
 The is a sample API that allows you to create users, appointments and appointment guests.
+
+_Passwords are currently unencrypted. We will be taking care of that very soon with bcrypt!_
 _____
 
 ### Endpoints
@@ -33,16 +35,21 @@ ruby 2.5.0
 `gem`, `bundler`, `git`, `rails`
 
 ### Configuration (Getting Started)
-    
+
+    # Clone
     git clone https://github.com/dambrogia/rails-appointments-api.git && cd rails-appointments-api
+
+    # Install dependencies
     bundle install
+
+    # Database creation
+    rails db:migrate
+
+    # Database initialization (Sample Data)
+    rails db:seed
+
+    # Start the server
     rails server # starts the API on localhost:3000
-
-### Database creation
-Uses the native sqlite3 so you can be up and running with no configuration
-
-### Database initialization
-Database seeding cominig soon!
 
 ### How to run the test suite
 The tests are built with RSpec. You can run the tests with the following command:
