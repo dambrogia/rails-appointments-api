@@ -1,6 +1,4 @@
-# README
-
-Rails Appointments API
+# Rails Appointments API
 
 The API allows you to create users, appointments and appointment guests.
 
