@@ -45,19 +45,16 @@ ruby 2.5.0
     # Database creation
     rails db:migrate
 
-    # Database initialization (Sample Data)
+    # Database initialization (sample data)
     rails db:seed
 
-    # Start the server
-    rails server # starts the API on localhost:3000
+    # Start the server (localhost:3000)
+    rails server
 
 ### How to run the test suite
 The tests are built with RSpec. You can run the tests with the following command:
 
     bundle exec rspec
-
-### Services (job queues, cache servers, search engines, etc.)
-None
 
 ### Deployment instructions
 Coming soon!
