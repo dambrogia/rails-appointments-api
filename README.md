@@ -1,6 +1,6 @@
 # Rails Appointments API
 
-The is a sample API that allows you to create users, appointments and appointment guests.
+The is a sample API that allows you to create users, create appointments and assign your users to your appointments as guests.
 
 _Passwords are currently unencrypted. We will be taking care of that very soon with bcrypt!_
 _____
