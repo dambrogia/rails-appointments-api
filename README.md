@@ -34,7 +34,7 @@ ruby 2.5.0
 ### System dependencies
 `gem`, `bundler`, `git`, `rails`
 
-### Configuration (Getting Started)
+### Getting started
 
     # Clone
     git clone https://github.com/dambrogia/rails-appointments-api.git && cd rails-appointments-api
