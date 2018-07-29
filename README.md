@@ -1,6 +1,7 @@
 # Rails Appointments API
 
 The is a sample API that allows you to create users, appointments and appointment guests.
+_____
 
 ### Endpoints
 
@@ -15,8 +16,6 @@ The is a sample API that allows you to create users, appointments and appointmen
 | GET   | /appointments/:appointment_id/guests          |
 | POST  | /appointments/:appointment_id/guests          |
 | GET   | /appointments/:appointment_id/guests/:id      |
-| PATCH | /appointments/:appointment_id/guests/:id      |
-| PUT   | /appointments/:appointment_id/guests/:id      |
 | DELETE| /appointments/:appointment_id/guests/:id      |
 | GET   | /appointments                                 |
 | POST  | /appointments                                 |
@@ -31,10 +30,13 @@ ____
 ruby 2.5.0
 
 ### System dependencies
-`gem`, `bundler`
+`gem`, `bundler`, `git`, `rails`
 
-### Configuration
-N/A
+### Configuration (Getting Started)
+    
+    git clone https://github.com/dambrogia/rails-appointments-api
+    bundler install
+    rails server # starts the API on localhost:3000
 
 ### Database creation
 Uses the native sqlite3 so you can be up and running with no configuration
