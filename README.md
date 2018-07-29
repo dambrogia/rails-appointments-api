@@ -34,8 +34,8 @@ ruby 2.5.0
 
 ### Configuration (Getting Started)
     
-    git clone https://github.com/dambrogia/rails-appointments-api
-    bundler install
+    git clone https://github.com/dambrogia/rails-appointments-api.git
+    bundle install
     rails server # starts the API on localhost:3000
 
 ### Database creation
