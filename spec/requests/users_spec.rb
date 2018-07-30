@@ -4,6 +4,43 @@ RSpec.describe 'Users API', type: :request do
   # initialize test data
   let!(:users) { create_list(:user, 10) }
   let(:user_id) { users.first.id }
+  let(:user) { create(:user) }
+  let(:headers) { valid_headers.except('Authorization') }
+  let(:valid_attributes) do
+    attributes_for(:user, password_confirmation: user.password)
+  end
+
+  # User signup test suite
+  describe 'POST /signup' do
+    context 'when valid request' do
+      before { post '/user', params: valid_attributes.to_json, headers: headers }
+
+      it 'creates a new user' do
+        p valid_attributes
+        expect(response).to have_http_status(201)
+      end
+
+      it 'returns success message' do
+        expect(json['message']).to include("success")
+      end
+
+      it 'returns an authentication token' do
+        expect(json['auth_token']).not_to be_nil
+      end
+    end
+
+    context 'when invalid request' do
+      before { post '/user', params: {}, headers: headers }
+
+      it 'does not create a new user' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns failure message' do
+        expect(json['message']).to include("Validation failed")
+      end
+    end
+  end
 
   # Test suite for GET /users
   describe 'GET /users' do

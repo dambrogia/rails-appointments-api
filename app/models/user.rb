@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+	# Encrypt password
+	has_secure_password
+
 	has_many :appointments, :dependent => :destroy
 	has_many :guests, :through => :appointments
 
