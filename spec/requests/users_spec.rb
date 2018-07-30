@@ -7,16 +7,15 @@ RSpec.describe 'Users API', type: :request do
   let(:user) { create(:user) }
   let(:headers) { valid_headers.except('Authorization') }
   let(:valid_attributes) do
-    attributes_for(:user, password_confirmation: user.password)
+    attributes_for(:user)
   end
 
   # User signup test suite
   describe 'POST /signup' do
     context 'when valid request' do
-      before { post '/user', params: valid_attributes.to_json, headers: headers }
+      before { post '/signup', params: valid_attributes.to_json, headers: headers }
 
       it 'creates a new user' do
-        p valid_attributes
         expect(response).to have_http_status(201)
       end
 
@@ -30,7 +29,7 @@ RSpec.describe 'Users API', type: :request do
     end
 
     context 'when invalid request' do
-      before { post '/user', params: {}, headers: headers }
+      before { post '/signup', params: {}, headers: headers }
 
       it 'does not create a new user' do
         expect(response).to have_http_status(422)
@@ -89,20 +88,11 @@ RSpec.describe 'Users API', type: :request do
   # Test suite for POST /users
   describe 'POST /users' do
     # valid payload
-    let(:valid_attributes) {
-      {
-        first_name: 'John',
-        last_name: 'Doe',
-        email: 'john@test.com',
-        password_digest: 'foobar123'
-      }
-    }
-
     context 'when the request is valid' do
-      before { post '/users', params: valid_attributes }
+      before { post '/users', params: valid_attributes.to_json, headers: headers }
 
       it 'creates a user' do
-        expect(json['last_name']).to eq('Doe')
+        expect(json['message']).to include("success")
       end
 
       it 'returns status code 201' do
