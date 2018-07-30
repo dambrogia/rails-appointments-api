@@ -24,6 +24,9 @@ require 'rspec/rails'
 #
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
+# Include our seeds helper modules and methods
+Dir[Rails.root.join('db/seeds/**/*.rb')].each { |f| require f }
+
 # Configure shoulda matchers to use rspec as the test framework and full
 # matcher libraries for rails
 Shoulda::Matchers.configure do |config|

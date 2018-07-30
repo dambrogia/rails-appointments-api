@@ -8,7 +8,6 @@ RSpec.describe Appointment, type: :model do
 	# ensure an Appointment record belongs to a single user
 	it { should belong_to(:user) }
 
-
 	# Validation tests
 
 	# ensure correct columns exist
