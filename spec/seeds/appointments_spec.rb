@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe DatabaseSeeder::Appointments do
-    describe 'Seeding appointments' do
-        it "doesn't seed without users" do
+    describe 'when there are no users' do
+        it "will not generate any appointments" do
             expect(DatabaseSeeder::Appointments.seed.empty?).to be true
         end
+    end
 
+    describe 'when there are users' do
         it "generates an appointment for generated each user" do
             users = DatabaseSeeder::Users.seed
             appointments = DatabaseSeeder::Appointments.seed
