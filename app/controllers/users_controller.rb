@@ -8,9 +8,12 @@ class UsersController < ApplicationController
   end
 
   # POST /users
+  # return authenticated token upon signup
   def create
-    @user = User.create!(user_params)
-    json_response(@user, :created)
+    user = User.create!(user_params)
+    auth_token = AuthenticateUser.new(user.email, user.password).call
+    response = { message: Message.account_created, auth_token: auth_token }
+    json_response(response, :created)
   end
 
   # GET /users/:id
@@ -34,7 +37,7 @@ class UsersController < ApplicationController
 
   def user_params
     # whitelist params
-    params.permit(:first_name, :last_name, :email, :password_digest)
+    params.permit(:first_name, :last_name, :email, :password)
   end
 
   def set_user

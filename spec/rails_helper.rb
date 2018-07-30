@@ -49,12 +49,13 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-  # add `FactoryBot` methods
+  # Add `FactoryBot` methods
   config.include FactoryBot::Syntax::Methods
 
-  # add request helper to format ruby hash to JSON
-  config.include RequestSpecHelper, type: :request
-
+  # Add request helper to format ruby hash to JSON
+  config.include RequestSpecHelper
+  # Helper functions for auth requests & headers
+  config.include ControllerSpecHelper
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

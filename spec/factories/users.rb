@@ -5,6 +5,6 @@ FactoryBot.define do
 		first_name { n.split.first }
 		last_name { n.split.last }
 		email { Faker::Internet.email }
-		password_digest { Faker::Dog.name }
+		password 'foobar'
   end
 end
